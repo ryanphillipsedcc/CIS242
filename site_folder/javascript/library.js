@@ -1,7 +1,7 @@
 
 
 //HomePage Scripts
-//Shows popup about new items on homepage
+//Shows simple popup about new items on homepage
 function popupOffer(){
 	var newWindow;
 	newWindow = open("", "newOffer", "toolbar=1,location=1, width=300, height=200, left=575, top=300");
@@ -13,7 +13,7 @@ function popupOffer(){
 var baseCost = 0.0;
 var itemTaxRate = 0.1;
 
-//OrderPage - returns price and selections
+//OrderPage - returns price and selections for cookie purposes
 function orderSummary(){
 	
 	var priceSubtotal = baseCost;
@@ -59,7 +59,7 @@ function orderSummary(){
 			guitTuning = i;
 		}
 	}
-//Disables options depending on selected guiatr style
+//Disables options depending on selected guitar styles
 		document.forms[0].guitarString[1].disabled = false;
 		document.forms[0].guitarString[0].disabled = false;
 		document.forms[0].guitarBridge[0].disabled = false;
@@ -68,6 +68,9 @@ function orderSummary(){
 		document.forms[0].guitarTuning[1].disabled = false;
 		document.forms[0].guitarTuning[2].disabled = false;
 		document.getElementById("finish").disabled = false;
+		document.forms[0].guitarStyle[0].disabled = false;
+		document.forms[0].guitarStyle[1].disabled = false;
+		document.forms[0].guitarStyle[2].disabled = false;
 
 	if (document.forms[0].guitarStyle[0].checked == true){
 		document.getElementById("finish").value = "Vanta Black";
@@ -91,7 +94,7 @@ function orderSummary(){
 		document.forms[0].guitarTuning[1].disabled = true;
 		document.forms[0].guitarTuning[2].disabled = true;	
 	}
-	else if (document.forms[0].guitarStyle[2].checked){
+	else if (document.forms[0].guitarStyle[2].checked == true){
 		document.getElementById("finish").value = "Corso Rosa";
 		document.getElementById("finish").disabled = true;
 		document.forms[0].guitarString[0].checked = true;
@@ -101,7 +104,7 @@ function orderSummary(){
 		document.forms[0].guitarTuning[2].checked = true;
 		document.forms[0].guitarTuning[0].disabled = true;
 		document.forms[0].guitarTuning[1].disabled = true;		
-	}		
+	}
 
 
 //Gets Value of selected radio buttons
@@ -165,7 +168,7 @@ function orderSummary(){
 	SetCookie("itemTax", itemTax);
 	SetCookie("priceTotal", priceTotal);
 	
-	//replaces divs with DHTML
+	//replaces divs with DHTML & values will be stored for cookies
 	strSummary = guitarText;
 	
 	priceSum = "<table class='center'><div id='orderSub'><tr><td>Subtotal:</td><td align='right'>"+ priceSubtotal +"</td></tr></div><div id='orderTax'><tr><td>Tax:</td><td align='right'>" + itemTax + "</td></tr></div><td><div id='orderTotal'><tr><td>Total:</td><td align='right'>" + priceTotal + "</td></tr></div></table>"
@@ -183,9 +186,15 @@ function writeGuitCookies(){
 
 	SetCookie("GuitarDesc", document.getElementById("orderSumm").innerHTML);
 	SetCookie("PriceSum", document.getElementById("orderSub").innerHTML);
-	window.location.href = "custsummary.html";
-	
-	return true;
+
+	//Checks to see if Custom ordered and if the checkbox is selcted.
+	if (document.forms[0].guitarStyle[3].checked == true && document.getElementById("customAgree").checked == false){
+		alert("You have selected a Custom Guitar. You must accept the agreement before submitting by clicking the checkbox.");
+		return true;
+	}
+	else {
+		window.location.href = "custsummary.html";
+	}
 }
 
 //Saves cust data for customer summary page
@@ -195,9 +204,12 @@ function writeCustomerCookie(form){
 	SetCookie("customerCity", document.forms[0].customerCity.value + "&comma;&nbsp;" + document.forms[0].customerState.value + "&nbsp;" + document.forms[0].customerZip.value + "<br/>");
 	SetCookie("customerPhone", document.forms[0].customerPhone.value + "<br/>");
 	SetCookie("customerEmail", document.forms[0].customerEmail.value);
-	window.location.href = "confirm.html";
-	return true;
 
+
+
+	return true;
+}
+//Replaces special characters
 	function replaceString(stringValue){
 
 	newString = stringValue;
@@ -226,7 +238,7 @@ function writeCustomerCookie(form){
 
 	return newString;
 	}
-}
+
 
 //Checks form index and returns blank if not an apt.
 function clearThis(){
@@ -260,7 +272,19 @@ $(document).ready(function() {
   });
 });
 
-//JQuery validator method - requires dashes with phone
+//Makes sure you can't submit without validating first
+var $form = $("customerInfo");
+var $submitbutton = $("#submitCust");
+
+$form.on("blur", "input", () => {
+  if ($form.valid()) {
+    $submitCust.removeAttr("disabled");   
+  } else {
+    $submitCust.attr("disabled", "disabled");
+  }
+});
+
+//JQuery validator method - requires dashes with phone#
 $.validator.addMethod('customphone', function (value, element) {
     return this.optional(element) || /^\d{3}-\d{3}-\d{4}$/.test(value);
 }, "Please use format 123-456-7890");
@@ -273,7 +297,7 @@ var minutes=120;
 /* ----------------------------------------------
 function secondPassed(){
 purpose:	Count down clock for delivery
-author:	
+author:	provided by Louis Ho for demonstration purposes
 parameters:		none
 ---------------------------------------------- */ 
 // 1800 seconds in 30 minutes
