@@ -272,7 +272,7 @@ $(document).ready(function() {
   });
 });
 
-//Makes sure you can't submit without validating first
+//Makes sure you can't submit without validating
 var $form = $("customerInfo");
 var $submitbutton = $("#submitCust");
 
