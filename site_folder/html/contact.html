@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name ="description" content="CIS242 Competency Demonstration Winter 2020">
+<meta name ="keywords" content="CIS242, Web development, Edmonds Community College">
+<meta name="author" content="Ryan Phillips">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/myStyle.css">
+<title>Order Page</title>
+<style>
+	h1.maintitle
+	{
+	color:#fe00ef;
+	text-align: center;
+	}
+	h2.generaltext
+	{
+	font-family:"Arial";
+	}
+	a:link
+	{
+	color:#f809fb;
+	}
+	a:visited
+	{
+	color:#09f81a;
+	}
+</style>
+<script type="text/javascript" src="../javascript/library.js"></script>
+</head>
+<body>
+<img src="../images/radguitars.jpg" alt="Rad Guitars Logo" style="width: 25%; height:auto; float:right;">
+&nbsp;
+<div class="nav">
+  <a href="home.html">&nbsp;Home |</a>
+  <a href="order.html"> &nbsp;Order |</a>
+  <a href="contact.html"> &nbsp;Contact</a>
+</div>
+<hr></hr>
+<h1 class="maintitle"> Have a problem with your order?<br/> No...problem! Contact me below:</h1>
+<br/>
+<form style="background-color: black; opacity:80%; padding:20px; 
+	border-radius:25px; border-color:#02fd44; "class="container" method="get" id="custForm" onsubmit="chForm2();"> Your Name: <input type="text" name="Name" size="40"/>
+	<br/>
+	<br/>
+	E-mail(required): <input type="text" name="contactEmail" size="40"/>
+	<br/>
+	<br/>
+	Country:
+	<input type="text" name="country" size="40">
+	<br/> 
+	<br/>
+	Nature of your inquiry<br/>
+	<input type="radio" name="Experience" value="None"/>Maintenance - ie. Guitar is busted!<br/>
+	<input type="radio" name="Experience" value="Beginner"/>Shipping<br/>
+	<input type="radio" name="Experience" value="Intermediate"/>Technical<br/>
+	<input type="radio" name="Experience" value="Intermediate"/>Billing<br/>
+	<input type="radio" name="Experience" value="Advanced"/>Praise<br/>
+	<br/>
+	Should we add you to our mailing list?
+	<input type="checkbox" name="mailinglist"/><br/>
+	<br/>
+
+	Comment/Inquiry(required):<br/>
+	<textarea name="comments" cols="50" rows="6"></textarea>
+	<br/>
+	<br/>
+	<br/>
+	<input type="submit" value="Submit"/> <input type="reset"/>
+	</form>
+<br/>
+<hr></hr>
+</body>
+<footer>
+<div class="footernav">
+  <a href="home.html">Home |</a>
+  <a href="order.html">Order Now |</a>
+  <a href="contact.html">Contact</a>
+</div>
+</br>
+<h4>&copy; 2020, Ryan Phillips. All Rights Reserved.</h4>
+</footer>
+</html>

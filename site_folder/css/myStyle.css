@@ -1,0 +1,219 @@
+body
+{
+margin:0px; 
+background-color:black; 
+font-family: Arial, Helvetica, Merryweather, sans-serif;
+color:white;
+}
+
+.nav
+{
+  overflow: hidden;
+  background-color: black;
+}
+
+.footernav
+{
+  color:gray;
+}
+
+.nav a
+{
+  float: left;
+  text-align: center;
+  font-size: 24px;
+}
+
+.footernav a
+{
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  color: gray;
+  text-decoration: none;
+}
+
+.nav a:hover
+{
+  vertical-align: center;
+  background-color: #02fd44;
+}
+
+hr
+{
+  display: block;
+  border-color: #02fd44;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 2px;
+}
+
+h1
+{
+font-weight: bold;
+font: Arial;
+color: white;  
+font-size: 160%; 
+margin-bottom: 25px; 
+margin-top:0px;
+}
+
+h2
+{
+font-weight: bold;
+font: Arial;
+color: white; 
+font-size: 100%; 
+margin-bottom: 25px; 
+margin-top:0px;
+}
+
+h3
+{
+font-weight: bold;
+font: Arial;
+color: white; 
+font-size: 110%; 
+margin-bottom: 5px; 
+margin-top:0px;
+}
+
+h4
+{
+font-weight: bold;
+font: Arial;
+color: white; 
+font-size: 100%; 
+margin-bottom: 5px; 
+margin-top:10px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+video.center
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+audio.center
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+footer
+{
+width: 100%;
+height: 100px;
+margin: auto;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 80%;
+color: white;
+}
+
+img.center
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.interestsbackground
+{
+  background-image: url("../images/interestsbg.jpg");
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.guestbookbg
+{
+  background-image: url("../images/guestbookbg.png");
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.resumebg
+{
+  background-image: url("../images/resumebg.jpg");
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+}
+
+#mainbackground
+{
+  background: url();
+  background-size: cover;
+  max-width:1024px; 
+  margin:15px auto;
+}
+
+.responsive 
+{
+  max-width: 100%;
+  height: auto;
+}
+
+.parallaxeffectbig 
+{
+  background-image: url("../images/background.jpg");
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallaxeffectsmall 
+{
+  background-image: url("../images/background.jpg");
+  height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+form.container
+{
+  max-width: 600px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin: auto;
+} 
+
+.links a
+{
+color:#02fd44;
+font-size:24px;
+}
+
+button:disabled {
+background: #F5F5F5;
+color : #C3C3C3;
+cursor:none;
+pointer-events: none;
+}
+
+label.error {
+  padding-bottom: -80px;
+  float:right;
+  color: red;
+  width: 100%;
+  display: block
+}
+
+
+
