@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
 <meta name ="description" content="CIS242 Competency Demonstration Winter 2020">
 <meta name ="keywords" content="CIS242, Web development, Edmonds Community College">
 <meta name="author" content="Ryan Phillips">
-<meta http-equiv="content-type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/myStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
 <script type="text/javascript" src="../javascript/library.js"></script>
 <script type="text/javascript" src="../javascript/cookies.js"></script>
@@ -47,20 +45,22 @@
   <a href="order.html"> &nbsp;Order |</a>
   <a href="contact.html"> &nbsp;Contact</a>
 </div>
-<hr></hr>
+<hr>
 
 <h1 style="text-align:center;">Welcome to Rad Guitars by Ryan Order Page</h1>
+<div style="text-align: center;">
 <form>
-	<table name="mainOrder" cellpadding="1" width="100%" border="1">
+	<table class="order">
 		<tr>
-			<td cospan="2" valign="top">Select Your Guitar Type:</td>
-			<td cospan="2" valign="top">Select Your Finish:</td>
-			<td cospan="2" valign="top">Select Number of Strings:</td>
-			<td cospan="2" valign="top">Select Hardtail/Tremolo:</td>
-			<td cospan="2" valign="top">Select Your Tuning:</td>
+			<td class="centerAlign">Select Your Guitar Type:</td>
+			<td class="centerAlign">Select Your Finish:</td>
+			<td class="centerAlign">Select Number of Strings:</td>
+			<td class="centerAlign">Select Hardtail/Tremolo:</td>
+			<td></td>
+			<td class="centerAlign">Select Your Tuning:</td>
 		</tr>
 		<tr>
-			<td>
+			<td class="block">
 			<input type="radio" name="guitarStyle" id="melter" value="Face-Melter" onclick="return orderSummary()">Face-Melter<br/>
 			<input type="radio" name="guitarStyle" id="blues" value="Blues" onclick="return orderSummary()">Blues<br/>
 			<input type="radio" name="guitarStyle" id="rock" value="Rock" onclick="return orderSummary()">Classic Rock<br/>
@@ -68,52 +68,50 @@
 			</td>
 			<td>
 				<select id="finish" name="guitarColor" style="vertical-align:top;" onchange="orderSummary()">
-					<option value="Sunburst" checked="checked" onclick="return orderSummary()">Sunburst</option>
-					<option value="Vanta Black" checked="checked" onclick="return orderSummary()">Vanta Black</option>
-					<option value="Corso Rosa" checked="checked" onclick="return == trueorderSummary()">Corso Rosa</option>
-					<option value="All Blue" checked="checked" onclick="return orderSummary()">All Blue</option>
+					<option value="Sunburst" onclick="return orderSummary()">Sunburst</option>
+					<option value="Vanta Black"  onclick="return orderSummary()">Vanta Black</option>
+					<option value="Corso Rosa" onclick="return == trueorderSummary()">Corso Rosa</option>
+					<option value="All Blue" onclick="return orderSummary()">All Blue</option>
 				</select>
 			</td>
 			<td>
 			<input type="radio" name="guitarString" id="sixString" value="Six String" checked="checked" onclick="return orderSummary()">6-String<br/>
 			<input type="radio" name="guitarString" id="sevenString" value="Seven String" onclick="return orderSummary()">7-String<br/>
 			</td>
-			<td>
-			<input type="radio" name="guitarBridge" id="hardTail" value="Hard Tail" checked="checked" onclick="return orderSummary()">Hard-Tail<br/>
-			<input type="radio" name="guitarBridge" id="floydRose" value="Floyd Rose" onclick="return orderSummary()">Floyd Rose Tremolo<br/>
+			<td class="block">
+			<input type="radio" name="guitarBridge" id="hardTail" value="Hard Tail" checked="checked" onclick="return orderSummary()">Hard Tail<br/>
+			<input type="radio" name="guitarBridge" id="floydRose" value="Floyd Rose" onclick="return orderSummary()">FloydRose<br/>
 			</td>
-			<td>
+			<td></td>
+			<td class="block">
 			<input type="radio" name="guitarTuning" id="standard" value="Standard Tuning" checked="checked" onclick="return orderSummary()">Standard<br/>
 			<input type="radio" name="guitarTuning" id="dropD" value="Drop D Tuning" onclick="return orderSummary()">Drop D<br/>
-			<input type="radio" name="guitarTuning" id="halfStep" value="Half-Step Down Tuning" onclick="return orderSummary()">Half-step Down<br/>
+			<input type="radio" name="guitarTuning" id="halfStep" value="Half-Step Down Tuning" onclick="return orderSummary()">Half-step<br/>
 			</td>
 		</tr>
 	</table>
 </form>
+</div>
 <br/>
 
 <div id="orderSumm" style="text-align: center; font-size:20px;">
 	<table>
 		<tr>
-			<td>Order Summary:</td><td align="right"></td>
-		<tr/>
+			<td>Order Summary:</td><td class="rightAlign"></td>
+		</tr>
 	</table>
 </div>
 <br/><br/>
 <div id="orderSub">
 	<table class="center">	
 		<tr>
-			<td>Subtotal:</td><td align="right"></td>
+			<td>Subtotal:</td><td class="rightAlign"></td>
 		</tr>	
-	</div>		
-		<div id="orderTax">
 		<tr>
-			<td>Tax:</td><td align="right"></td>
-		</tr>	
-	</div>			<td>	
-		<div id="orderTotal">
+			<td>Tax:</td><td class="rightAlign"></td>
+		</tr>		
 		<tr>
-			<td>Total:</td><td align="right"></td>
+			<td>Total:</td><td class="rightAlign"></td>
 		</tr>	
 	</table>
 </div>
@@ -131,24 +129,19 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<hr></hr>
+<hr>
 <script type="text/javascript">
 <!--
 document.forms[0].reset();
 orderSummary();
 //-->
 </script>
-</body>
-<footer>
 <div class="footernav">
   <a href="home.html">Home |</a>
   <a href="order.html">Order Now |</a>
   <a href="contact.html">Contact</a>
 </div>
-</br>
+<br/>
 <h4>&copy; 2020, Ryan Phillips. All Rights Reserved.</h4>
-</footer>
+</body>
 </html>

@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
 <meta name ="description" content="CIS242 Competency Demonstration Winter 2020">
 <meta name ="keywords" content="CIS242, Web development, Edmonds Community College">
 <meta name="author" content="Ryan Phillips">
-<meta http-equiv="content-type" content="text/html">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/myStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.js"></script>
 <script type="text/javascript" src="../javascript/library.js"></script>
@@ -51,14 +49,14 @@
 <h1 class="maintitle">Customer Information Page</h1>
 <br/>
 <br/>
-<div>
-	<table class="center" border="1" width = "60%" style="margin-left: 20%; margin-right:20%;">
+<div style="text-align:center;">
+	<table style="width:60%; border:1px solid white; margin-left: 20%; margin-right:20%;">
 		<tr>
-			<td width="300" style="text-align: center;">Your Current
+			<td style="border:1px solid white; width:300px; text-align: center;">Your Current
 			<script type="text/javascript">
 				document.write(GetCookie("GuitarDesc"));
 				</script></td>
-			<td width="130" align="center">
+			<td style="border:1px solid white; width:175px; padding-left: 100px;">
 				<script type="text/javascript">
 				document.write(GetCookie("PriceSum"));
 				</script>
@@ -70,42 +68,40 @@
 <div style="text-align: center;">
 <h3 style="text-align: center;">Please complete the following information:</h3>
 <form action="confirm.html" method="get" id="customerInfo" onsubmit="return writeCustomerCookie();">
-	<table class="center" width = "50%" style="margin-left: 25%;">
-		<tr width="300" style="text-align: center;">
+	<table style="width:40%; margin-left:30%;">
+		<tr style="width:300px; text-align:center;">	
 			<td>First Name</td><td><input id="firstName" name="firstName" type="text" minlength="2" onchange="return clearThis()" required/></td>
 		</tr>
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">		
 			<td>Last Name</td><td><input id="lastName" name ="lastName" type="text" minlength="2" onchange="return clearThis()" required/></td>
 		</tr>
-		<tr width="300" style="text-align: center;">	
-			<td>Email</td><td width="60%"><input id="customerEmail" name="customerEmail" type="email" onchange="return clearThis()" required/></td>
+		<tr style="width:300px; text-align: center;">		
+			<td>Email</td><td style="width:60%;"><input id="customerEmail" name="customerEmail" type="email" onchange="return clearThis()" required/></td>
 		</tr>
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">		
 			<td>Phone</td><td><input id="customerPhone" name="customerPhone" type="text" onchange="return clearThis()" required/></td>
 		</tr>
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">		
 			<td>Address</td><td><input id="customerAddress" name="customerAddress" type="text" minlength="8" onchange="return clearThis()" required/></td>
 		</tr>
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">		
 			<td>Apt.</td><td><input id="customerApartment" name="customerApartment" value ="If NA leave blank" type="text" onchange="return clearThis()" /></td>
 		</tr>
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">		
 			<td>City</td><td><input id="customerCity" name="customerCity" type="text" minlength="3" onchange="return clearThis()" required="" /></td>
 		</tr>	
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">		
 			<td>State</td><td><input id="customerState" name="customerState" type="text" minlength="2" onchange="return clearThis()" required="" /></td>
 		</tr>	
-		<tr width="300" style="text-align: center;">	
+		<tr style="width:300px; text-align: center;">	
 			<td>Zip</td><td><input id="customerZip" name="customerZip" minlength="5" type="text" onchange="return clearThis()" required/></td>
 		</tr>
-
-	</table>
-		<div>
-			<input id="submitCust" type="submit" value = "Complete Order"></td>
-		</div>
-	</form>	
+		<tr>
+			<td></td>
+		<td style="float:left; padding-top: 20px;"><input id="submitCust" type="submit" value = "Complete Order"></td>
+		</table>
+	</form>		
 </div>
-<div>
 <br/>
 <br/>
 <br/>
@@ -115,14 +111,12 @@
 <br/>
 <br/>
 <hr>
-</body>
-<footer>
 <div class="footernav">
   <a href="home.html">Home |</a>
   <a href="order.html">Order Now |</a>
   <a href="contact.html">Contact</a>
 </div>
-</br>
+<br/>
 <h4>&copy; 2020, Ryan Phillips. All Rights Reserved.</h4>
-</footer>
+</body>
 </html>
